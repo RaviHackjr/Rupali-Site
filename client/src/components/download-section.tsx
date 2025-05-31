@@ -35,7 +35,7 @@ export default function DownloadSection() {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-horror text-blood-red mb-6 animate-glow">Download</h2>
+          <h2 className="text-4xl md:text-5xl font-horror text-blood-red mb-6 animate-glow-subtle">Download</h2>
 
           
           <div className="bg-medium-gray/30 rounded-2xl p-6 sm:p-8 lg:p-12 border border-horror-red/30 horror-glow">

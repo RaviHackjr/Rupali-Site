@@ -9,7 +9,7 @@ const teamMembers = [
     icon: Crown
   },
   {
-    name: "Dev Robin",
+    name: "Robin",
     title: "GUI & UI Manager",
     contribution: "Specializes in game user interface design and user experience optimization. Creates the visual elements that players interact with.",
     icon: Monitor
@@ -22,8 +22,8 @@ const teamMembers = [
   },
   {
     name: "Tushar",
-    title: "Designer & Modeler",
-    contribution: "Handles both design concepts and 3D modeling work, ensuring every visual element maintains the horror aesthetic.",
+    title: "Coder with Designer & Modeler",
+    contribution: "Handles coding, design concepts and 3D modeling work, ensuring every visual element maintains the horror aesthetic.",
     icon: PaintbrushVertical
   },
   {
@@ -45,7 +45,7 @@ export default function TeamSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-horror text-blood-red mb-4 sm:mb-6 animate-glow">Flame Dev Studio</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-horror text-blood-red mb-4 sm:mb-6 animate-glow-subtle">FlameDev Studio</h2>
           <p className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto px-4">Meet the talented team behind Rupali - The Indian Horror Game</p>
 
         </motion.div>
@@ -91,7 +91,7 @@ export default function TeamSection() {
               <div className="w-24 h-24 bg-gradient-to-br from-horror-red to-blood-red rounded-full mx-auto mb-4 flex items-center justify-center">
                 <Flame className="text-white text-2xl animate-flicker" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Flame Dev Studio</h3>
+              <h3 className="text-xl font-semibold text-white mb-2">FlameDev Studio</h3>
               <p className="text-blood-red font-medium mb-3">Independent Game Studio</p>
               <p className="text-gray-400 text-sm leading-relaxed">Dedicated to creating immersive horror experiences that push the boundaries of fear and storytelling.</p>
               <div className="flex justify-center space-x-3 mt-4">

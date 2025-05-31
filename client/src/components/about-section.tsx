@@ -12,7 +12,7 @@ export default function AboutSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-horror text-blood-red mb-4 sm:mb-6 animate-glow">About The Game</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-horror text-blood-red mb-4 sm:mb-6 animate-glow-subtle">About The Game</h2>
 
         </motion.div>
         

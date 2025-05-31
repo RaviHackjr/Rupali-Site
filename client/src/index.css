@@ -33,6 +33,79 @@
   --red-glow: 0 86% 70%; /* #FF6B6B */
 }
 
+/* Mobile-first responsive design */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improved touch targets for mobile */
+button, 
+a, 
+input, 
+select, 
+textarea {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+@media (max-width: 768px) {
+  button, 
+  a, 
+  input, 
+  select, 
+  textarea {
+    min-height: 48px;
+  }
+}
+
+/* Prevent zoom on form inputs on iOS */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+select,
+textarea {
+  font-size: 16px;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Safe area support for newer mobile devices */
+.safe-area-padding {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
 .dark {
   --background: 240 10% 3.9%;
   --foreground: 0 0% 98%;
@@ -136,6 +209,11 @@
   to { text-shadow: 0 0 20px hsl(var(--blood-red)), 0 0 30px hsl(var(--blood-red)), 0 0 40px hsl(var(--blood-red)); }
 }
 
+@keyframes glow-subtle {
+  from { text-shadow: 0 0 5px hsl(var(--blood-red)), 0 0 10px hsl(var(--blood-red)); }
+  to { text-shadow: 0 0 8px hsl(var(--blood-red)), 0 0 15px hsl(var(--blood-red)); }
+}
+
 @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
@@ -150,6 +228,10 @@
   animation: glow 2s ease-in-out infinite alternate;
 }
 
+.animate-glow-subtle {
+  animation: glow-subtle 2s ease-in-out infinite alternate;
+}
+
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
@@ -159,5 +241,5 @@
 }
 
 .font-gothic {
-  font-family: 'Nosifer', cursive;
+  font-family: 'Nosifer', 'Cinzel', 'serif';
 }

@@ -1,18 +1,30 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { soundManager } from "@/lib/soundManager";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY < lastScrollY || currentScrollY < 100) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      }
+      
+      setIsScrolled(currentScrollY > 50);
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -26,13 +38,13 @@ export default function Navigation() {
     <>
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled ? "bg-horror-black/95" : "bg-horror-black/80"
-      }`}>
+      } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <h1 className="text-2xl font-horror text-blood-red animate-glow cursor-pointer"
+              <h1 className="text-2xl font-bold text-blood-red cursor-pointer tracking-wider font-gothic transform hover:scale-105 transition-transform duration-300"
                   onClick={() => scrollToSection("home")}>
-                RUPALI
+                FLAMEDEV
               </h1>
             </div>
             
@@ -40,31 +52,36 @@ export default function Navigation() {
               <div className="flex items-center space-x-8">
                 <button 
                   onClick={() => scrollToSection("home")}
-                  className="hover:text-blood-red transition-colors duration-300"
+                  onMouseEnter={() => soundManager.play('buttonHover')}
+                  onClick={() => {
+                    soundManager.play('buttonClick');
+                    scrollToSection("home");
+                  }}
+                  className="text-white font-medium hover:text-blood-red transition-colors duration-300"
                 >
                   Home
                 </button>
                 <button 
                   onClick={() => scrollToSection("about")}
-                  className="hover:text-blood-red transition-colors duration-300"
+                  className="text-white font-medium hover:text-blood-red transition-colors duration-300"
                 >
                   About
                 </button>
                 <button 
                   onClick={() => scrollToSection("team")}
-                  className="hover:text-blood-red transition-colors duration-300"
+                  className="text-white font-medium hover:text-blood-red transition-colors duration-300"
                 >
                   Team
                 </button>
                 <button 
                   onClick={() => scrollToSection("download")}
-                  className="hover:text-blood-red transition-colors duration-300"
+                  className="text-white font-medium hover:text-blood-red transition-colors duration-300"
                 >
                   Download
                 </button>
                 <button 
                   onClick={() => scrollToSection("contact")}
-                  className="hover:text-blood-red transition-colors duration-300"
+                  className="text-white font-medium hover:text-blood-red transition-colors duration-300"
                 >
                   Contact
                 </button>

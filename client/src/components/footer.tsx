@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 
 export default function Footer() {
   return (
@@ -12,17 +13,17 @@ export default function Footer() {
           className="text-center"
         >
           <h3 className="text-2xl font-horror text-blood-red mb-4 animate-glow">RUPALI</h3>
-          <p className="text-gray-400 mb-6">© 2024 Flame Dev Studio. All rights reserved.</p>
+          <p className="text-gray-400 mb-6">© 2024 FlameDev Studio. All rights reserved.</p>
           
           <div className="flex justify-center space-x-8 text-sm text-gray-400 mb-8">
-            <a href="#" className="hover:text-blood-red transition-colors duration-300">Privacy Policy</a>
-            <a href="#" className="hover:text-blood-red transition-colors duration-300">Terms of Service</a>
-            <a href="#" className="hover:text-blood-red transition-colors duration-300">Press Kit</a>
+            <Link href="/privacy-policy" className="hover:text-blood-red transition-colors duration-300">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="hover:text-blood-red transition-colors duration-300">Terms of Service</Link>
+            <Link href="/press-kit" className="hover:text-blood-red transition-colors duration-300">Press Kit</Link>
           </div>
           
           <div className="mt-8">
             <p className="text-xs text-gray-500">
-              Made with <span className="text-blood-red animate-pulse">♦</span> by Flame Dev Studio
+              Made By FlameDev Studio Since 2024
             </p>
           </div>
         </motion.div>

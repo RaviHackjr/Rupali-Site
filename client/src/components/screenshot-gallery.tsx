@@ -31,7 +31,7 @@ export default function ScreenshotGallery() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-horror text-blood-red mb-6 animate-glow">Game Screenshots</h2>
+          <h2 className="text-4xl md:text-5xl font-horror text-blood-red mb-6 animate-glow-subtle">Game Screenshots</h2>
 
         </motion.div>
         

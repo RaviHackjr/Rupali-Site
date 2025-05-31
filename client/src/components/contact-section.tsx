@@ -18,7 +18,7 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-horror text-blood-red mb-6 animate-glow">Contact</h2>
+          <h2 className="text-4xl md:text-5xl font-horror text-blood-red mb-6 animate-glow-subtle">Contact</h2>
 
         </motion.div>
 
